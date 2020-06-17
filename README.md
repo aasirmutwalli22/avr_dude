@@ -4,9 +4,9 @@
 
 ```yaml
 dependencies:
-  flutter_customs:
+  avr_dude:
     git:
-      url: https://github.com/aasirmutwalli22/flutter_customs.git
+      url: https://github.com/aasirmutwalli22/avr_dude.git
 ```
 ## Alert
     > currently only supported for windows desktop
