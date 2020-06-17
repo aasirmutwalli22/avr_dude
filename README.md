@@ -8,7 +8,7 @@ dependencies:
     git:
       url: https://github.com/aasirmutwalli22/flutter_customs.git
 ```
-#### Alert
+## Alert
     > currently only supported for windows desktop
     > plugin created with flutter version 1.20.0-1.0.pre.83 at master channel, as the flutter for windows support is not stable this plugin may not supported for other flutter versions
 
