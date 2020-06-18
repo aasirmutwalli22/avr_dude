@@ -12,7 +12,6 @@ List<String> _avrDudePossibleLocations = [
 Future<bool> _directoryExists(String directory) async => await Directory(directory).exists();
 
 class AvrDude {
-  List<FileSystemEntity> directory() => Directory('./').listSync(recursive: false);
   Future<ProcessResult> upload(AvrDudeConfig config) async => Process.run(
     'avrdude.exe',
     config.arguments(),
@@ -50,7 +49,7 @@ class AvrDudeConfig {
     '-Uflash:w:$hexFile:i'];
   static Future<String> getAvrDudeLocation() async => _avrDudePossibleLocations.
   let((locations) async => locations.length.let((position) async {
-    while(!await _directoryExists(locations[--position]) && position>= 0);
+    while(!await _directoryExists(locations[--position]) && position>= 0){}
     return position != -1 ? locations[position] + 'avrdude' : '';
   }));
 }

@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final textController = new TextEditingController();
   String uploadLogs = '';
   @override Widget build(BuildContext context) => MaterialApp(
     home: Scaffold(
@@ -23,16 +24,17 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Plugin example app'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Center(
             child: FlatButton(
               child: Text('Upload'),
               onPressed: () async => AvrDude().
-              upload(AvrDudeConfig(comPort: 'COM7', workingDirectory: await AvrDudeConfig.getAvrDudeLocation(),)).
+              upload(AvrDudeConfig(comPort: 'COM4', workingDirectory: await AvrDudeConfig.getAvrDudeLocation(),)).
               then((ProcessResult value) => setState(() => uploadLogs=value.stderr)),
             ),
           ),
-          Text(uploadLogs),
+          SingleChildScrollView(child: Text(uploadLogs,)),
         ],
       ),
     ),
