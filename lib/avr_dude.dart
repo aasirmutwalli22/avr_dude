@@ -24,13 +24,13 @@ class AvrDude {
     runInShell: true,);
 }
 class AvrDudeConfig {
-  final String configFile;
-  final String comPort;
-  final String controller;
-  final String programmer;
-  final String baudRate;
-  final String hexFile;
-  final String workingDirectory;
+  String configFile;
+  String comPort;
+  String controller;
+  String programmer;
+  String baudRate;
+  String hexFile;
+  String workingDirectory;
   AvrDudeConfig({
     this.programmer = 'arduino',
     this.controller = 'atmega328p',
